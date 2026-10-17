@@ -1,0 +1,4 @@
+charset-normalizer==3.5.2
+pillow==13.0.0
+pillow_heif==1.8.1
+reportlab==5.0.1
