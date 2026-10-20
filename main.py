@@ -40,9 +40,10 @@ def load_image(path):
 def crop_box(w, h, ox, oy):
     """Область исходника (в пикселях), попадающая в слот 65x75 мм (режим cover)."""
     s = max(PHOTO_W / w, PHOTO_H / h)  # мм на пиксель
-    cw, ch = PHOTO_W / s, PHOTO_H / s
-    left = ox * (w - cw)
-    top = oy * (h - ch)
+    # min() защищает от погрешности float (cw может оказаться чуть больше w)
+    cw, ch = min(PHOTO_W / s, w), min(PHOTO_H / s, h)
+    left = min(max(ox * (w - cw), 0.0), w - cw)
+    top = min(max(oy * (h - ch), 0.0), h - ch)
     return (left, top, left + cw, top + ch), s
 
 

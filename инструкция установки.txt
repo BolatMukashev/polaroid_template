@@ -1,0 +1,2 @@
+cd ~/Desktop или туда где лежит файл
+chmod +x start.command
