@@ -273,8 +273,8 @@ class App:
                     x, y = SLOTS[s]
                     c.drawImage(ImageReader(piece), x * mm, (PAGE_H - y - PHOTO_H) * mm,
                                 PHOTO_W * mm, PHOTO_H * mm)
-                c.setLineWidth(0.25)
-                c.setStrokeColorRGB(0.1, 0.2, 0.55)
+                c.setLineWidth(0.1) # толщина линии
+                c.setStrokeColorRGB(0.5, 0.5, 0.5) # цвет линии
                 c.line(CUT_X * mm, 0, CUT_X * mm, PAGE_H * mm)
                 c.showPage()
         c.save()
